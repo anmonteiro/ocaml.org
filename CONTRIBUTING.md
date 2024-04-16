@@ -24,6 +24,7 @@ We've provided a list of community-driven content below. When adding content to 
 - [Success Stories](#content-success-story)
 - [Academic and Industrial Users](#content-user)
 - [OCaml Books](#content-book)
+- [OCaml Cookbook Recipes](#content-cookbook)
 - [Recurring Events](#content-recurring-event)
 - [Upcoming Events](#content-upcoming_event)
 - [The OCaml Changelog](#content-changelog)
@@ -111,6 +112,35 @@ You can add a new industrial user by creating a new Markdown file in [data/acade
 > Contribute to the [OCaml Books](https://ocaml.org/books).
 
 You can add a new OCaml book by creating a new Markdown file in [data/books/](data/books/). For instance: [ocaml-from-the-very-beginning.md](data/books/ocaml-from-the-very-beginning.md).
+
+### <a name="content-cookbook"></a>Add a Recipe to the OCaml Cookbook
+
+The OCaml cookbook is a place where OCaml developers share how to solve common
+tasks in OCaml using packages from the OCaml ecosystem.
+
+Here are the steps to contribute a recipe for an existing task:
+* Find the task in the [data/cookbook/tasks.yml](data/cookbook/tasks.yml) file
+* Go to the task folder inside [data/cookbook/](data/cookbook/) which has the
+  same name as the task's `slug`
+* Create a `.ml` file containing the recipe and a Yaml header with metadata about
+  the recipe.
+
+If the recipe does not fit into any existing task, you also need to create a
+task. Add a `task:` entry in [data/cookbook/tasks.yml](data/cookbook/tasks.yml)
+file. Fields `title`, `description` and `slug` are mandatory. The task must be
+located under a relevant `category:` field.
+
+Finally, it is also possible to create and organize groups of tasks by creating
+new categories. Categories are recursive and may have subcategories, which are
+full categories too. A task listed in
+[data/cookbook/tasks.yml](data/cookbook/tasks.yml) may have no recipes yet. The
+other way, it is not allowed to have a task folder in
+[data/cookbook/](data/cookbook/) which does not correspond to a task from the
+[data/cookbook/tasks.yml](data/cookbook/tasks.yml) file, it triggers a
+compilation error.
+
+Each recipe is a way to perform a task using a combination of open-source
+libraries.
 
 ### <a name="content-recurring-event"></a>Add A Recurring Event
 
